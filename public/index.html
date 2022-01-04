@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Multiplayer Chess</title>
+    <script type="module" src="https://unpkg.com/chessboard-element?module"></script>
+    <link rel="stylesheet" href="/css/style.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/chess.js/0.10.2/chess.js"></script>
+    <!-- import socket.io -->
+    <script src="/socket.io/socket.io.js"></script>
+</head>
+<body>
+    <chess-board style="width: 500px;" draggable-pieces position="start"></chess-board>
+    <script src="/javascript/index.js"></script>
+    <script src="/javascript/chess.js"></script>
+</body>
+</html>
