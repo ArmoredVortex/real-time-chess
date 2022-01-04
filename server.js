@@ -30,8 +30,9 @@ io.on('connection', socket => {
         console.log(users);
     });
 
-    socket.on("move", fen => {
-        socket.broadcast.emit("move", fen)
+    socket.on("move", (fen,pgn) => {
+        socket.broadcast.emit("move", fen,pgn)
+        console.log(pgn)
     })   
 });
 
