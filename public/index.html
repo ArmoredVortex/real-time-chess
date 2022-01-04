@@ -12,7 +12,15 @@
     <script src="/socket.io/socket.io.js"></script>
 </head>
 <body>
-    <chess-board style="width: 500px;" draggable-pieces position="start"></chess-board>
+    <div class="main">
+        <chess-board style="width: 450px; height: 450px;" draggable-pieces position="start"></chess-board>
+        <div class="container">
+            <h2 id="oppUsername" class="username"></h2>
+            <div></div>
+            <h2 id="selfUsername" class="username"></h2>
+        </div>
+    </div>
+    
     <script src="/javascript/index.js"></script>
     <script src="/javascript/chess.js"></script>
 </body>

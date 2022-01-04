@@ -20,7 +20,7 @@ io.on('connection', socket => {
         }
         // sleep for 1 second to allow time user to connect
         setTimeout(() => {
-            io.emit("user-connected", users[socket.id].color, users);
+            io.emit("user-connected", users[socket.id].color,users[socket.id].username, users);
         }, 1000);
         console.log(users)
     });
