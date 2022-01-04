@@ -24,7 +24,10 @@ function greySquare(square) {
 
 board.addEventListener('drag-start', (e) => {
   const {source, piece} = e.detail;
-
+  // prevent picking up pieces if its not your turn
+  if(game.turn() !== pieces) {
+    e.preventDefault();
+  }
   // do not pick up pieces if the game is over
   if (game.game_over()) {
     e.preventDefault();
@@ -32,8 +35,8 @@ board.addEventListener('drag-start', (e) => {
   }
 
   // or if it's not that side's turn
-  if ((game.turn() === 'w' && piece.search(/^b/) !== -1) ||
-      (game.turn() === 'b' && piece.search(/^w/) !== -1)) {
+  if ((game.turn() === 'w' && piece.search(/^b/) !== -1 ) ||
+      (game.turn() === 'b' && piece.search(/^w/) !== -1 )) {
     e.preventDefault();
     return;
   }
@@ -59,7 +62,10 @@ board.addEventListener('drop', (e) => {
 
 board.addEventListener('mouseover-square', (e) => {
   const {square, piece} = e.detail;
-
+  // prevent highlighting opponent's pieces
+  if(game.turn() !== pieces) {
+    return;
+  }
   // get list of possible moves for this square
   const moves = game.moves({
     square: square,
