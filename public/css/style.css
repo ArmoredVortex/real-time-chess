@@ -1,6 +1,6 @@
 /* set body backgroudn to dark grey */
 body {
-    background-color: #2d2d2d;
+    background-color: #161616;
     overflow: hidden;
 }
 
@@ -29,6 +29,13 @@ chess-board{
       ".";
 }
 
+.username-container {
+    background-color: #3e423f;
+}
 .username {
-    color: white;
+    padding-left: 10px;
+    padding-right: 10px;
+    font-family: monospace;
+    color: #bababa;
+    text-align: center;
 }

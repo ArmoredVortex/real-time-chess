@@ -15,10 +15,13 @@ socket.on("user-connected", (color,name,list) => {
     console.log(list)
     // get opponenets username from list
     let opponent = Object.keys(list).filter(key => key !== socket.id)[0];
-    document.getElementById("oppUsername").innerHTML = list[opponent].username;
+    if(opponent !== undefined) {
+        document.getElementById("oppUsername").innerHTML = list[opponent].username;
+    }
     if(pieces === undefined) {
         pieces = color;
         if(color === "b") {
+            console.log("black")
             board.flip();
         }
     }
