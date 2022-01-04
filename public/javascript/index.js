@@ -2,10 +2,10 @@ const socket = io();
 const username = prompt("Enter Your Name");
 let pieces;
 
-socket.on("move", fen => {
+socket.on("move", (fen,pgn) => {
     board.setPosition(fen);
-    // set game.move to oppnents move
-    game.move(game.move());
+    // set game pgn
+    game.load_pgn(pgn);
 })
 
 socket.emit("new-user", username);

@@ -92,5 +92,6 @@ board.addEventListener('mouseout-square', (e) => {
 
 board.addEventListener('snap-end', (e) => {
   board.setPosition(game.fen())
-  socket.emit('move', game.fen())
+  console.log(game.pgn())
+  socket.emit('move', game.fen(),game.pgn())
 });
